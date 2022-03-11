@@ -1,0 +1,29 @@
+version: '3.8'
+
+networks:
+  dev_net:
+
+services:
+  node_express:
+    build:
+      context: .
+      dockerfile: docker/development/Dockerfile
+    image: node_express
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/build
+
+  node_express_prod:
+    build:
+      context: .
+      dockerfile: docker/production/Dockerfile
+    image: node_express
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/build
