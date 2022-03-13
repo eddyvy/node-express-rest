@@ -20,6 +20,11 @@ Start the server on port 3000:
 yarn dev
 ```
 
+Run the tests
+````bash
+yarn test
+````
+
 
 
 ## Production environment
